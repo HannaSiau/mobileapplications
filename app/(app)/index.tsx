@@ -5,9 +5,12 @@ import { Text } from '../../src/components/primitives/Text';
 import { EmptyState } from '../../src/components/primitives/EmptyState';
 import { StyledButton } from '../../src/components/StyledButton';
 import {Badge} from "@/components/primitives";
+import DrawingCanvas from '../../src/components/DrawingCanvas'
 
 export default function HomeScreen() {
+  /*
   const { user, logout } = useAuthStore();
+
 
   return (
     <Screen padding="lg">
@@ -24,6 +27,10 @@ export default function HomeScreen() {
         <StyledButton label="Log out" onPress={logout} variant="secondary" />
       </Stack>
     </Screen>
+  );*/
+
+  return (
+    <DrawingCanvas/>
   );
 }
 
