@@ -4,22 +4,21 @@ import { Stack } from '../../src/components/primitives/Stack';
 import { Text } from '../../src/components/primitives/Text';
 import { EmptyState } from '../../src/components/primitives/EmptyState';
 import { StyledButton } from '../../src/components/StyledButton';
-import {Badge} from "@/components/primitives";
-import DrawingCanvas from '../../src/components/DrawingCanvas'
+import { Badge } from '../../src/components/primitives/Badge';
+import DrawingCanvas from '../../src/components/DrawingCanvas';
+import Game from '../../src/components/Game';
 
 export default function HomeScreen() {
-  /*
   const { user, logout } = useAuthStore();
 
-
-  return (
+  /*return (
     <Screen padding="lg">
       <Stack gap="lg">
         <Text size="xl" weight="bold">
           {user !== null ? `Welcome, ${user.name}` : 'Welcome'}
         </Text>
         <Text>Your items will appear here once you connect Supabase.</Text>
-        <Badge label={'Succes badge'} variant={"success"} />
+        <Badge label="Success badge" variant="success" />
         <EmptyState
           title="No items yet"
           description="Implement getItems() in your itemService to load data."
@@ -28,9 +27,9 @@ export default function HomeScreen() {
       </Stack>
     </Screen>
   );*/
-
-  return (
-    <DrawingCanvas/>
-  );
+return (
+    <Game/>
+    );
 }
+
 
