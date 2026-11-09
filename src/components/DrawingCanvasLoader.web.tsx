@@ -10,7 +10,7 @@ export default function DrawingCanvasLoader(props: Props) {
     <WithSkiaWeb
       getComponent={() => import('./DrawingCanvas')}
       componentProps={props}
-      opts={{ locateFile: (file: string) => `/mobileapplications/public/${file}` }}
+      opts={{ locateFile: (file: string) => `/mobileapplications/${file}` }}
       fallback={<Text style={{ textAlign: 'center', marginTop: 40 }}>Loading...</Text>}
     />
   );
