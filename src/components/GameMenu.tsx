@@ -5,6 +5,7 @@ import { View, Text, Pressable } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons"; 
 import { PlayerAmt } from "./Game";
+import { useAuth } from '@/context/AuthContext';
 
 const MODES = [
   {
@@ -36,13 +37,17 @@ const MODES = [
 
 export default function GameMenu() {
     const router = useRouter();
+    const { user } = useAuth();
     const onPressed = (playerAmt: PlayerAmt) =>(
         router.push(`/game/${playerAmt}`)
     );
+    console.log('user in menu:', user);
     return (
     <SafeAreaView className="flex-1 items-center justify-center bg-indigo-950 px-6">
         <Text className="mb-2 -rotate-2 text-5xl font-black text-white">Monster Mash!</Text>
-        <Text className="mb-10 text-lg font-semibold text-indigo-300">Hoeveel Spelers?</Text>
+        <Text className="mb-10 text-lg font-semibold text-indigo-300">
+          {user?.name ? `Welcome, ${user.name}!` : "Hoeveel spelers?"}
+        </Text>
         <View className="w-full max-w-sm items-center gap-6">
             {MODES.map(({ players, label, hex, border, text, tilt }) => (
                 <Pressable

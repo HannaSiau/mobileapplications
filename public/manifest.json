@@ -1,0 +1,9 @@
+{
+  "name": "Monster Mash!",
+  "short_name": "Monster Mash",
+  "start_url": "/mobileapplications/",
+  "scope": "/mobileapplications/",
+  "display": "standalone",
+  "background_color": "#1e1b4b",
+  "theme_color": "#1e1b4b"
+}

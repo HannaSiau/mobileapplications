@@ -15,12 +15,21 @@ const BUTTONS = [
   },
     {
     label: "Login",
-    url: '/menu',
+    url: '/login',
     border: "border-sky-600",
     text: "text-sky-600",
     bg: "bg-indigo-950",
     size: "w-2/3 py-4",
     tilt: "rotate-3",
+  },
+  {
+    label: "Register",
+    url: '/register',
+    border: "border-amber-500",
+    text: "text-amber-500",
+    bg: "bg-indigo-950",
+    size: "w-2/3 py-4",
+    tilt: "-rotate-1",
   }
 ] as const;
 
