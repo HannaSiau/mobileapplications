@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { SkImage } from '@shopify/react-native-skia';
 import DrawingCanvas from './DrawingCanvasLoader';
-import Reveal from './Reveal';
+import Reveal from './RevealLoader';
 import { useDrawingStore } from '../store/DrawingStore';
 import { Stack } from 'expo-router';
 
