@@ -5,8 +5,9 @@ import { Text } from '../../src/components/primitives/Text';
 import { EmptyState } from '../../src/components/primitives/EmptyState';
 import { StyledButton } from '../../src/components/StyledButton';
 import { Badge } from '../../src/components/primitives/Badge';
-import DrawingCanvas from '../../src/components/DrawingCanvas';
-import Game from '../../src/components/Game';
+import GameMenu  from "@/components/GameMenu";
+import TitlePage from '@/components/TitlePage';
+
 
 export default function HomeScreen() {
   const { user, logout } = useAuthStore();
@@ -28,7 +29,7 @@ export default function HomeScreen() {
     </Screen>
   );*/
 return (
-    <Game/>
+    <TitlePage/>
     );
 }
 

@@ -1,7 +1,7 @@
 import React, { useRef, useState, useMemo } from 'react';
 import { View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Canvas, Path, Skia, SkPath, useCanvasRef } from '@shopify/react-native-skia';
+import { Canvas, Path, Skia, useCanvasRef, type SkImage, type SkPath } from '@shopify/react-native-skia';
 import {
   Gesture,
   GestureDetector,
@@ -9,6 +9,7 @@ import {
 } from 'react-native-gesture-handler';
 import Toolbar, { BrushSettings } from './Toolbar';
 import TopBar from './TopBar';
+import type { Phase } from './Game';
 
 type Stroke = BrushSettings & { path: SkPath };
 type Current = { builder: ReturnType<typeof Skia.PathBuilder.Make>; stroke: Stroke };
@@ -27,9 +28,9 @@ const renderStroke = (s: Stroke, key?: number) => (
   />
 );
 
-type Props = { onFinish: (image: SkImage) => void };
+type Props = { phase: Phase, onFinish: (image: SkImage) => void };
 
-export default function DrawingCanvas({ onFinish }: Props) {
+export default function DrawingCanvas({ phase, onFinish }: Props) {
   const [strokes, setStrokes] = useState<Stroke[]>([]);
   const [redoStack, setRedoStack] = useState<Stroke[]>([]);
   const [currentStroke, setCurrentStroke] = useState<Stroke | null>(null);
@@ -96,7 +97,7 @@ export default function DrawingCanvas({ onFinish }: Props) {
 
   return (
       <GestureHandlerRootView style={{ flex: 1 }}>
-        <SafeAreaView edges={['top']} style={{ flex: 1, backgroundColor: '#f4f4f5' }}>
+        <SafeAreaView edges={['top']} style={{ flex: 1, backgroundColor: '#f4f4f5', zIndex:10, elevation: 10 }}>
           <TopBar
             canUndo={strokes.length > 0}
             canRedo={redoStack.length > 0}
@@ -104,7 +105,7 @@ export default function DrawingCanvas({ onFinish }: Props) {
             onRedo={redo}
             onFinish={finish}
           />
-          <View style={{ flex: 1 }}>
+          <View style={{ flex: 1, overflow: 'hidden' }}>
             <GestureDetector gesture={panGesture}>
               <Canvas ref={canvasRef} style={{ flex: 1, backgroundColor: 'white' }}>
                 {committedPaths}

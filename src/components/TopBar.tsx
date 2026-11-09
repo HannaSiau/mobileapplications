@@ -14,12 +14,12 @@ export default function TopBar({ canUndo, canRedo, onUndo, onRedo, onFinish }: P
   return (
     <View style={styles.container}>
       <Pressable
-        onPress={onUndo}
+        onPress={() => { console.log('undo pressed'); onUndo(); }}
         disabled={!canUndo}
         hitSlop={8}
         style={[styles.button, !canUndo && styles.disabled]}
       >
-        <MaterialCommunityIcons name="undo" size={24} color="#3f3f46" />
+        <MaterialCommunityIcons name="undo" size={32} color="#3f3f46" />
       </Pressable>
       <Pressable
         onPress={onRedo}
@@ -27,14 +27,14 @@ export default function TopBar({ canUndo, canRedo, onUndo, onRedo, onFinish }: P
         hitSlop={8}
         style={[styles.button, !canRedo && styles.disabled]}
       >
-        <MaterialCommunityIcons name="redo" size={24} color="#3f3f46" />
+        <MaterialCommunityIcons name="redo" size={32} color="#3f3f46" />
       </Pressable>
       <Pressable
               onPress={onFinish}
               hitSlop={8}
               style={[styles.button]}
             >
-        <MaterialCommunityIcons name="arrow-right" size={24} color="#3f3f46" />
+        <MaterialCommunityIcons name="arrow-right" size={32} color="#3f3f46" />
       </Pressable>
     </View>
   );
@@ -43,7 +43,7 @@ export default function TopBar({ canUndo, canRedo, onUndo, onRedo, onFinish }: P
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    justifyContent: 'flex-start',
+    justifyContent: 'flex-end',
     gap: 8,
     paddingHorizontal: 12,
     paddingVertical: 8,
