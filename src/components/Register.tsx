@@ -39,9 +39,7 @@ export default function RegisterScreen() {
                 onChangeText={setUserName}
                 placeholderTextColor="#818CF8"
                 placeholder="your name"
-                secureTextEntry
                 autoCapitalize="none"
-                testID="password-input"
                 className="rounded-3xl border-4 border-indigo-400 px-5 py-4 text-lg font-semibold text-white"
                 />
             </View>
