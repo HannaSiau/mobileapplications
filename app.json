@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Monster Mash!",
-    "slug": "monster-mash",
+    "name": "UCLL Mobile Starter",
+    "slug": "ucll-mobile-starter",
     "version": "1.0.0",
     "orientation": "portrait",
     "scheme": "ucllstarter",
@@ -24,7 +24,8 @@
       "expo-image"
     ],
     "experiments": {
-      "typedRoutes": true
+      "typedRoutes": true,
+      "baseUrl": "/mobileapplications"
     }
   }
 }
