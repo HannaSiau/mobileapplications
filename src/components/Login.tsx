@@ -3,6 +3,7 @@ import { KeyboardAvoidingView, Platform, Pressable, Text, TextInput, View } from
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
 import { useAuth } from '@/context/AuthContext';
+import { Button } from "@/components/Button";
 
 export default function LoginScreen() {
   const [email, setEmail] = useState('');
@@ -66,19 +67,7 @@ export default function LoginScreen() {
           {error !== '' && (
             <Text className="text-center text-base font-semibold text-pink-400">{error}</Text>
           )}
-
-          <Pressable
-            onPress={handleLogin}
-            disabled={submitting}
-            accessibilityRole="button"
-            accessibilityLabel="Log in"
-            testID="login-button"
-            className="mt-4 w-full items-center rounded-[36px] border-4 border-b-8 border-amber-500 bg-transparent py-5 active:translate-y-1 active:border-b-4 disabled:opacity-50"
-          >
-            <Text className="text-3xl font-extrabold text-amber-500">
-              {submitting ? 'Logging in...' : 'Log in'}
-            </Text>
-          </Pressable>
+          <Button label="Login" color="amber" size="lg" tilt="0" onPress={handleLogin} />
 
           <Pressable
             onPress={() => router.replace('/')}
