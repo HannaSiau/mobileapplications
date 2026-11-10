@@ -11,7 +11,8 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "android": "expo run:android",
-    "ios": "expo run:ios"
+    "ios": "expo run:ios",
+    "build": "expo export --platform web"
   },
   "dependencies": {
     "@expo/metro-runtime": "~58.0.17",
